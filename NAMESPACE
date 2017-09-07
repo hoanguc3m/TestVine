@@ -1,0 +1,3 @@
+useDynLib(TestVine)
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)
