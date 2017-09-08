@@ -12,3 +12,4 @@ LazyData: true
 License: GPL (>= 2)
 LinkingTo: Rcpp, VineCopula
 Depends: R (>= 3.0.2), Rcpp, VineCopula
+Import: VineCopula

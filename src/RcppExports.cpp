@@ -8,21 +8,20 @@
 
 using namespace Rcpp;
 
-// timesTwo
-NumericVector timesTwo(NumericVector x);
-static SEXP _TestVine_timesTwo_try(SEXP xSEXP) {
+// Hfunc2_call
+double Hfunc2_call();
+static SEXP _TestVine_Hfunc2_call_try() {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(timesTwo(x));
+    rcpp_result_gen = Rcpp::wrap(Hfunc2_call());
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _TestVine_timesTwo(SEXP xSEXP) {
+RcppExport SEXP _TestVine_Hfunc2_call() {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_TestVine_timesTwo_try(xSEXP));
+        rcpp_result_gen = PROTECT(_TestVine_Hfunc2_call_try());
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -43,25 +42,14 @@ RcppExport SEXP _TestVine_timesTwo(SEXP xSEXP) {
 static int _TestVine_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
-        signatures.insert("NumericVector(*timesTwo)(NumericVector)");
+        signatures.insert("double(*Hfunc2_call)()");
     }
     return signatures.find(sig) != signatures.end();
 }
 
 // registerCCallable (register entry points for exported C++ functions)
 RcppExport SEXP _TestVine_RcppExport_registerCCallable() { 
-    R_RegisterCCallable("TestVine", "_TestVine_timesTwo", (DL_FUNC)_TestVine_timesTwo_try);
+    R_RegisterCCallable("TestVine", "_TestVine_Hfunc2_call", (DL_FUNC)_TestVine_Hfunc2_call_try);
     R_RegisterCCallable("TestVine", "_TestVine_RcppExport_validate", (DL_FUNC)_TestVine_RcppExport_validate);
     return R_NilValue;
-}
-
-static const R_CallMethodDef CallEntries[] = {
-    {"_TestVine_timesTwo", (DL_FUNC) &_TestVine_timesTwo, 1},
-    {"_TestVine_RcppExport_registerCCallable", (DL_FUNC) &_TestVine_RcppExport_registerCCallable, 0},
-    {NULL, NULL, 0}
-};
-
-RcppExport void R_init_TestVine(DllInfo *dll) {
-    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
-    R_useDynamicSymbols(dll, FALSE);
 }

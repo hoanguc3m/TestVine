@@ -24,23 +24,23 @@ namespace TestVine {
         }
     }
 
-    inline NumericVector timesTwo(NumericVector x) {
-        typedef SEXP(*Ptr_timesTwo)(SEXP);
-        static Ptr_timesTwo p_timesTwo = NULL;
-        if (p_timesTwo == NULL) {
-            validateSignature("NumericVector(*timesTwo)(NumericVector)");
-            p_timesTwo = (Ptr_timesTwo)R_GetCCallable("TestVine", "_TestVine_timesTwo");
+    inline double Hfunc2_call() {
+        typedef SEXP(*Ptr_Hfunc2_call)();
+        static Ptr_Hfunc2_call p_Hfunc2_call = NULL;
+        if (p_Hfunc2_call == NULL) {
+            validateSignature("double(*Hfunc2_call)()");
+            p_Hfunc2_call = (Ptr_Hfunc2_call)R_GetCCallable("TestVine", "_TestVine_Hfunc2_call");
         }
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_timesTwo(Shield<SEXP>(Rcpp::wrap(x)));
+            rcpp_result_gen = p_Hfunc2_call();
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
-        return Rcpp::as<NumericVector >(rcpp_result_gen);
+        return Rcpp::as<double >(rcpp_result_gen);
     }
 
 }
