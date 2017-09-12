@@ -4,6 +4,7 @@
 #ifndef RCPP_TestVine_RCPPEXPORTS_H_GEN_
 #define RCPP_TestVine_RCPPEXPORTS_H_GEN_
 
+#include <RcppEigen.h>
 #include <Rcpp.h>
 
 namespace TestVine {
@@ -24,23 +25,112 @@ namespace TestVine {
         }
     }
 
-    inline double Hfunc2_call() {
-        typedef SEXP(*Ptr_Hfunc2_call)();
-        static Ptr_Hfunc2_call p_Hfunc2_call = NULL;
-        if (p_Hfunc2_call == NULL) {
-            validateSignature("double(*Hfunc2_call)()");
-            p_Hfunc2_call = (Ptr_Hfunc2_call)R_GetCCallable("TestVine", "_TestVine_Hfunc2_call");
+    inline void Gaussian_hfunc() {
+        typedef SEXP(*Ptr_Gaussian_hfunc)();
+        static Ptr_Gaussian_hfunc p_Gaussian_hfunc = NULL;
+        if (p_Gaussian_hfunc == NULL) {
+            validateSignature("void(*Gaussian_hfunc)()");
+            p_Gaussian_hfunc = (Ptr_Gaussian_hfunc)R_GetCCallable("TestVine", "_TestVine_Gaussian_hfunc");
         }
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_Hfunc2_call();
+            rcpp_result_gen = p_Gaussian_hfunc();
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
-        return Rcpp::as<double >(rcpp_result_gen);
+    }
+
+    inline void Student_hfunc() {
+        typedef SEXP(*Ptr_Student_hfunc)();
+        static Ptr_Student_hfunc p_Student_hfunc = NULL;
+        if (p_Student_hfunc == NULL) {
+            validateSignature("void(*Student_hfunc)()");
+            p_Student_hfunc = (Ptr_Student_hfunc)R_GetCCallable("TestVine", "_TestVine_Student_hfunc");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_Student_hfunc();
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+    }
+
+    inline void Clayton_hfunc() {
+        typedef SEXP(*Ptr_Clayton_hfunc)();
+        static Ptr_Clayton_hfunc p_Clayton_hfunc = NULL;
+        if (p_Clayton_hfunc == NULL) {
+            validateSignature("void(*Clayton_hfunc)()");
+            p_Clayton_hfunc = (Ptr_Clayton_hfunc)R_GetCCallable("TestVine", "_TestVine_Clayton_hfunc");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_Clayton_hfunc();
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+    }
+
+    inline void Gumbel_hfunc() {
+        typedef SEXP(*Ptr_Gumbel_hfunc)();
+        static Ptr_Gumbel_hfunc p_Gumbel_hfunc = NULL;
+        if (p_Gumbel_hfunc == NULL) {
+            validateSignature("void(*Gumbel_hfunc)()");
+            p_Gumbel_hfunc = (Ptr_Gumbel_hfunc)R_GetCCallable("TestVine", "_TestVine_Gumbel_hfunc");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_Gumbel_hfunc();
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+    }
+
+    inline void Frank_hfunc() {
+        typedef SEXP(*Ptr_Frank_hfunc)();
+        static Ptr_Frank_hfunc p_Frank_hfunc = NULL;
+        if (p_Frank_hfunc == NULL) {
+            validateSignature("void(*Frank_hfunc)()");
+            p_Frank_hfunc = (Ptr_Frank_hfunc)R_GetCCallable("TestVine", "_TestVine_Frank_hfunc");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_Frank_hfunc();
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+    }
+
+    inline void Joe_hfunc() {
+        typedef SEXP(*Ptr_Joe_hfunc)();
+        static Ptr_Joe_hfunc p_Joe_hfunc = NULL;
+        if (p_Joe_hfunc == NULL) {
+            validateSignature("void(*Joe_hfunc)()");
+            p_Joe_hfunc = (Ptr_Joe_hfunc)R_GetCCallable("TestVine", "_TestVine_Joe_hfunc");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_Joe_hfunc();
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
     }
 
 }

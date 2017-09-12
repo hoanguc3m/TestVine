@@ -2,26 +2,166 @@
 // Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #include "../inst/include/TestVine.h"
+#include <RcppEigen.h>
 #include <Rcpp.h>
 #include <string>
 #include <set>
 
 using namespace Rcpp;
 
-// Hfunc2_call
-double Hfunc2_call();
-static SEXP _TestVine_Hfunc2_call_try() {
+// Gaussian_hfunc
+void Gaussian_hfunc();
+static SEXP _TestVine_Gaussian_hfunc_try() {
 BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    rcpp_result_gen = Rcpp::wrap(Hfunc2_call());
-    return rcpp_result_gen;
+    Gaussian_hfunc();
+    return R_NilValue;
 END_RCPP_RETURN_ERROR
 }
-RcppExport SEXP _TestVine_Hfunc2_call() {
+RcppExport SEXP _TestVine_Gaussian_hfunc() {
     SEXP rcpp_result_gen;
     {
         Rcpp::RNGScope rcpp_rngScope_gen;
-        rcpp_result_gen = PROTECT(_TestVine_Hfunc2_call_try());
+        rcpp_result_gen = PROTECT(_TestVine_Gaussian_hfunc_try());
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// Student_hfunc
+void Student_hfunc();
+static SEXP _TestVine_Student_hfunc_try() {
+BEGIN_RCPP
+    Student_hfunc();
+    return R_NilValue;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _TestVine_Student_hfunc() {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_TestVine_Student_hfunc_try());
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// Clayton_hfunc
+void Clayton_hfunc();
+static SEXP _TestVine_Clayton_hfunc_try() {
+BEGIN_RCPP
+    Clayton_hfunc();
+    return R_NilValue;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _TestVine_Clayton_hfunc() {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_TestVine_Clayton_hfunc_try());
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// Gumbel_hfunc
+void Gumbel_hfunc();
+static SEXP _TestVine_Gumbel_hfunc_try() {
+BEGIN_RCPP
+    Gumbel_hfunc();
+    return R_NilValue;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _TestVine_Gumbel_hfunc() {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_TestVine_Gumbel_hfunc_try());
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// Frank_hfunc
+void Frank_hfunc();
+static SEXP _TestVine_Frank_hfunc_try() {
+BEGIN_RCPP
+    Frank_hfunc();
+    return R_NilValue;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _TestVine_Frank_hfunc() {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_TestVine_Frank_hfunc_try());
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
+// Joe_hfunc
+void Joe_hfunc();
+static SEXP _TestVine_Joe_hfunc_try() {
+BEGIN_RCPP
+    Joe_hfunc();
+    return R_NilValue;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _TestVine_Joe_hfunc() {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_TestVine_Joe_hfunc_try());
     }
     Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
     if (rcpp_isInterrupt_gen) {
@@ -42,14 +182,24 @@ RcppExport SEXP _TestVine_Hfunc2_call() {
 static int _TestVine_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
-        signatures.insert("double(*Hfunc2_call)()");
+        signatures.insert("void(*Gaussian_hfunc)()");
+        signatures.insert("void(*Student_hfunc)()");
+        signatures.insert("void(*Clayton_hfunc)()");
+        signatures.insert("void(*Gumbel_hfunc)()");
+        signatures.insert("void(*Frank_hfunc)()");
+        signatures.insert("void(*Joe_hfunc)()");
     }
     return signatures.find(sig) != signatures.end();
 }
 
 // registerCCallable (register entry points for exported C++ functions)
 RcppExport SEXP _TestVine_RcppExport_registerCCallable() { 
-    R_RegisterCCallable("TestVine", "_TestVine_Hfunc2_call", (DL_FUNC)_TestVine_Hfunc2_call_try);
+    R_RegisterCCallable("TestVine", "_TestVine_Gaussian_hfunc", (DL_FUNC)_TestVine_Gaussian_hfunc_try);
+    R_RegisterCCallable("TestVine", "_TestVine_Student_hfunc", (DL_FUNC)_TestVine_Student_hfunc_try);
+    R_RegisterCCallable("TestVine", "_TestVine_Clayton_hfunc", (DL_FUNC)_TestVine_Clayton_hfunc_try);
+    R_RegisterCCallable("TestVine", "_TestVine_Gumbel_hfunc", (DL_FUNC)_TestVine_Gumbel_hfunc_try);
+    R_RegisterCCallable("TestVine", "_TestVine_Frank_hfunc", (DL_FUNC)_TestVine_Frank_hfunc_try);
+    R_RegisterCCallable("TestVine", "_TestVine_Joe_hfunc", (DL_FUNC)_TestVine_Joe_hfunc_try);
     R_RegisterCCallable("TestVine", "_TestVine_RcppExport_validate", (DL_FUNC)_TestVine_RcppExport_validate);
     return R_NilValue;
 }
