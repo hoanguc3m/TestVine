@@ -9,6 +9,34 @@
 
 using namespace Rcpp;
 
+// Test_logc_Student
+void Test_logc_Student();
+static SEXP _TestVine_Test_logc_Student_try() {
+BEGIN_RCPP
+    Test_logc_Student();
+    return R_NilValue;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP _TestVine_Test_logc_Student() {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(_TestVine_Test_logc_Student_try());
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
 // Gaussian_hfunc
 void Gaussian_hfunc();
 static SEXP _TestVine_Gaussian_hfunc_try() {
@@ -182,6 +210,7 @@ RcppExport SEXP _TestVine_Joe_hfunc() {
 static int _TestVine_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
+        signatures.insert("void(*Test_logc_Student)()");
         signatures.insert("void(*Gaussian_hfunc)()");
         signatures.insert("void(*Student_hfunc)()");
         signatures.insert("void(*Clayton_hfunc)()");
@@ -194,6 +223,7 @@ static int _TestVine_RcppExport_validate(const char* sig) {
 
 // registerCCallable (register entry points for exported C++ functions)
 RcppExport SEXP _TestVine_RcppExport_registerCCallable() { 
+    R_RegisterCCallable("TestVine", "_TestVine_Test_logc_Student", (DL_FUNC)_TestVine_Test_logc_Student_try);
     R_RegisterCCallable("TestVine", "_TestVine_Gaussian_hfunc", (DL_FUNC)_TestVine_Gaussian_hfunc_try);
     R_RegisterCCallable("TestVine", "_TestVine_Student_hfunc", (DL_FUNC)_TestVine_Student_hfunc_try);
     R_RegisterCCallable("TestVine", "_TestVine_Clayton_hfunc", (DL_FUNC)_TestVine_Clayton_hfunc_try);

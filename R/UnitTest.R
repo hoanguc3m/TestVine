@@ -1,5 +1,23 @@
 library("VineCopula")
 
+# Student copula
+family = 2
+par = 0.8
+u = 0.5; v = 0.5;
+par2 = 5
+log(BiCopPDF(u, v, family, par, par2 = par2))
+BiCopDeriv(u, v, family, par, par2 = par2, deriv = "par2", log = TRUE)
+
+BiCopHfunc2(u,v, family = family, par = par, par2 = par2)
+# [1] 0.07324421
+BiCopHfuncDeriv(u, v, family = family, par = par, par2 = par2, deriv = "par")
+# [1] -0.2328563
+BiCopHfuncDeriv(u, v, family = family, par = par, par2 = par2, deriv = "u2")
+# [1] -0.1983125
+BiCopHfuncDeriv(u, v, family = family, par = par, par2 = par2, deriv = "par2")
+# [1] 0.0004019854
+
+
 # Gaussian
 u = 0.2
 v = 0.7

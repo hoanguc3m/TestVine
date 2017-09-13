@@ -1,8 +1,14 @@
 #include <Rcpp.h>
 using namespace Rcpp;
-#include <stan/math/rev/core.hpp>
-
 // [[Rcpp::interfaces(r,cpp)]]
+
+#include <stan/math/rev/core.hpp>
+#include <dist/bicop_student_log.hpp>
+
+//#include <dist/bicop_student_log.hpp>
+// #include <stan/math.hpp>
+// #include <iostream>
+
 
 void (*Hfunc2) (int* family,int* n,double* v,double* u,double* theta,double* nu,double* out);
 
@@ -22,10 +28,32 @@ extern "C" void R_init_TestVine(DllInfo *dll) {
     diffhfunc_nu_tCopula_new = (void (*) (double* , double* , int* , double* , int* , double* )) R_GetCCallable("VineCopula", "diffhfunc_nu_tCopula_new");
 
     diffhfunc_v_mod = (void (*) (double* , double* , int* , double* , int* , double* )) R_GetCCallable("VineCopula", "diffhfunc_v_mod");
+    difflPDF_nu_tCopula_new = (void (*) (double* , double* , int* , double* , int* , double* )) R_GetCCallable("VineCopula", "difflPDF_nu_tCopula_new");
 }
 
 
 using namespace stan::math;
+
+
+// [[Rcpp::export]]
+void Test_logc_Student() {
+    using stan::math::var;
+
+    double nu_val = 5;
+    var nu(nu_val);
+    var lp1(0.0);
+    lp1 += vifcopula::bicop_student_log<false>(0.5, 0.5, 0.8, nu);
+    double lp1val = lp1.val();
+
+    lp1.grad();
+    double lp1adj = nu.adj();
+
+
+    std::cout << lp1val << " " << lp1adj << std::endl;
+
+    // EXPECT_FLOAT_EQ(lp1val,0.6101877);
+    // EXPECT_FLOAT_EQ(lp1adj,-0.01962769);
+}
 
 // hfunc_trans with 3 vars arguement
 stan::math::var hfunc_trans (int family,

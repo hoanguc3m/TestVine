@@ -25,6 +25,24 @@ namespace TestVine {
         }
     }
 
+    inline void Test_logc_Student() {
+        typedef SEXP(*Ptr_Test_logc_Student)();
+        static Ptr_Test_logc_Student p_Test_logc_Student = NULL;
+        if (p_Test_logc_Student == NULL) {
+            validateSignature("void(*Test_logc_Student)()");
+            p_Test_logc_Student = (Ptr_Test_logc_Student)R_GetCCallable("TestVine", "_TestVine_Test_logc_Student");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_Test_logc_Student();
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+    }
+
     inline void Gaussian_hfunc() {
         typedef SEXP(*Ptr_Gaussian_hfunc)();
         static Ptr_Gaussian_hfunc p_Gaussian_hfunc = NULL;
